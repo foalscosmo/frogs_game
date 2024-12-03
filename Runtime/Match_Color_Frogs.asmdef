@@ -1,6 +1,6 @@
 {
-    "name": "com.appidea.MiniGamePlatform.YOUR_MINI_GAME_NAME",
-    "rootNamespace": "com.appidea.MiniGamePlatform.YOUR_MINI_GAME_NAME",
+    "name": "com.appidea.MiniGamePlatform.Match_Color_Frogs",
+    "rootNamespace": "com.appidea.MiniGamePlatform.Match_Color_Frogs",
     "references": [
         "com.appidea.MiniGamePlatform.CommunicationAPI",
         "Unity.Addressables",
