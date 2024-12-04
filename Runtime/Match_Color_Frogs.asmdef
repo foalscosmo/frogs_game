@@ -6,7 +6,9 @@
         "Unity.Addressables",
         "Unity.ResourceManager",
         "spine-unity",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.TextMeshPro",
+        "spine-csharp"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
