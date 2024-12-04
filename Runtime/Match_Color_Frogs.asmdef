@@ -4,7 +4,9 @@
     "references": [
         "com.appidea.MiniGamePlatform.CommunicationAPI",
         "Unity.Addressables",
-        "Unity.ResourceManager"
+        "Unity.ResourceManager",
+        "spine-unity",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

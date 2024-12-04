@@ -11,7 +11,7 @@ public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint, IMiniGameLoadin
     
     protected override Task LoadInternal()
     {
-        handle = Addressables.LoadAssetAsync<GameObject>("Match_Colors_Frogs");
+        handle = Addressables.LoadAssetAsync<GameObject>("EntryPoint");
         return Task.CompletedTask;
     }
 
