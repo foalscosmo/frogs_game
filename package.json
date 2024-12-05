@@ -4,7 +4,8 @@
     "displayName": "match_colors_frogs", 
     "description": "game is about to match the colors of frogs",
     "dependencies": {
-        "com.unity.inputsystem": "1.7.0"
+        "com.unity.inputsystem": "1.7.0",
+        "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git"
     },
     "unity": "2022.3",
     "author": {
