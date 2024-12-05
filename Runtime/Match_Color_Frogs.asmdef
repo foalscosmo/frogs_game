@@ -8,7 +8,8 @@
         "spine-unity",
         "Unity.InputSystem",
         "Unity.TextMeshPro",
-        "spine-csharp"
+        "spine-csharp",
+        "Coffee.UIParticle"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
