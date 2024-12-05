@@ -6,8 +6,7 @@
     "dependencies": {
         "com.unity.inputsystem": "1.7.0",
         "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
-        "com.unity.render-pipelines.universal": "14.0.10"
-    },
+        "com.unity.render-pipelines.universal": "14.0.10"},
     "unity": "2022.3",
     "author": {
         "name": "zuka tavadze",
