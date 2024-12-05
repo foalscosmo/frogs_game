@@ -2,24 +2,19 @@ using System;
 using System.Threading.Tasks;
 using com.appidea.MiniGamePlatform.CommunicationAPI;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint, IMiniGameLoadingProgressHandler
+public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint
 {
-    private AsyncOperationHandle<GameObject> handle;
+    [SerializeField] private GameObject gamePrefab;
     
     protected override Task LoadInternal()
     {
+        Instantiate(gamePrefab);
         return Task.CompletedTask;
     }
 
     protected override Task UnloadInternal()
     {
-        Addressables.Release(handle);
         return Task.CompletedTask;
     }
-
-    public float Progress { get; private set; }
-    public event Action<float> ProgressChanged;
 }
