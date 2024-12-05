@@ -8,10 +8,12 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint, IMiniGameLoadingProgressHandler
 {
     private AsyncOperationHandle<GameObject> handle;
+    [SerializeField] private GameObject gameObject;
     
     protected override Task LoadInternal()
     {
         handle = Addressables.LoadAssetAsync<GameObject>("EntryPoint");
+        Instantiate(gameObject);
         return Task.CompletedTask;
     }
 
