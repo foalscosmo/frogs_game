@@ -4,9 +4,6 @@
     "displayName": "match_colors_frogs", 
     "description": "game is about to match the colors of frogs",
     "dependencies": {
-        "com.esotericsoftware.spine-csharp": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-csharp/src#303cd853082b34eaf8788b2a615851d3bc619c4f",
-        "com.esotericsoftware.spine-unity": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine#906793db81afcdbb47475419ce304a3dc5d04ac6",
-        "com.esotericsoftware.spine-examples": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine Examples#b214801a0a95b4f69dd5f6f70b341c96ea83097f",
         "com.unity.inputsystem": "1.7.0"
     },
     "unity": "2022.3",
