@@ -18,7 +18,7 @@ namespace Managers
         [SerializeField] private UiManager uiManager; // Reference to the UiManager.
         [SerializeField] private HintManager hintManager; // Reference to the HintManager.
         [SerializeField] private LevelManager levelManager; // Reference to the LevelManager.
-
+        [SerializeField] private MatchColorFrogsEntryPoint matchColorFrogsEntryPoint;
         private void Awake()
         {
             Application.targetFrameRate = 120;
@@ -42,6 +42,7 @@ namespace Managers
             levelManager.OnGameFinish += soundManager.PlayFinishGameSound;
             levelManager.OnGameFinish += particleManager.OnFinishPlayParticle;
             levelManager.OnGameFinish += soundManager.PlayFinishMusicSource;
+            levelManager.OnGameFinish += SetFinishForPackage;
         }
 
         // Unsubscribe from events when the object is disabled
@@ -63,6 +64,7 @@ namespace Managers
             levelManager.OnGameFinish -= soundManager.PlayFinishGameSound;
             levelManager.OnGameFinish -= particleManager.OnFinishPlayParticle;
             levelManager.OnGameFinish -= soundManager.PlayFinishMusicSource;
+            levelManager.OnGameFinish -= SetFinishForPackage;
         }
 
         private void SetMissionFalse()
@@ -168,6 +170,18 @@ namespace Managers
             bucketManager.BucketSpawner.SpawnBuckets();
             frogManager.FrogSpawner.SpawnFrogsToStartPoint();
             colorManager.SetColorToObjects();
+        }
+
+        private void SetFinishForPackage()
+        {
+            StartCoroutine(FinishAfterFireworks());
+        }
+
+        private IEnumerator FinishAfterFireworks()
+        {
+            yield return new WaitForSecondsRealtime(5f);
+            Debug.Log("Finish.. time to Unload game");
+            matchColorFrogsEntryPoint.InvokeGameFinished();
         }
     }
 }
