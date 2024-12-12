@@ -44,6 +44,7 @@ namespace Frog
             }
 
             OnFrogsSpawn?.Invoke();
+            
         }
         
         private IEnumerator RandomJumpRoutine()

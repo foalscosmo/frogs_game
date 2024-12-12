@@ -1,15 +1,17 @@
 using System;
 using System.Threading.Tasks;
 using com.appidea.MiniGamePlatform.CommunicationAPI;
+using Managers;
 using UnityEngine;
 
 public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint
 {
     [SerializeField] private GameObject gamePrefab;
-    
     protected override Task LoadInternal()
     {
-        Instantiate(gamePrefab);
+        var gameManager = Instantiate(gamePrefab);
+        gameManager.GetComponent<GameManager>().SetEntryPoint(this);
+        InvokeGameFinished();
         return Task.CompletedTask;
     }
 

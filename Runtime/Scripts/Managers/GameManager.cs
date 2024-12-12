@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
+using com.appidea.MiniGamePlatform.CommunicationAPI;
 using DG.Tweening;
 using Frog;
 using Hint;
 using Particle;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 namespace Managers
 {
@@ -18,7 +21,7 @@ namespace Managers
         [SerializeField] private UiManager uiManager; // Reference to the UiManager.
         [SerializeField] private HintManager hintManager; // Reference to the HintManager.
         [SerializeField] private LevelManager levelManager; // Reference to the LevelManager.
-        [SerializeField] private MatchColorFrogsEntryPoint matchColorFrogsEntryPoint;
+        private MatchColorFrogsEntryPoint _entryPoint;
         private void Awake()
         {
             Application.targetFrameRate = 120;
@@ -26,6 +29,7 @@ namespace Managers
 
         private void OnEnable()
         {
+            TouchSimulation.Enable();
             bucketManager.BucketSpawner.OnBucketsSpawn += frogManager.FrogSpawner.SetActiveFrogsWithDelay;
             frogManager.FrogSpawner.OnFrogsSpawn += SetHintTimer;
             foreach (var dragged in frogManager.SnappedFrogs) dragged.OnFrogDrag += HandleDragging;
@@ -48,6 +52,7 @@ namespace Managers
         // Unsubscribe from events when the object is disabled
         private void OnDisable()
         {
+            TouchSimulation.Disable();
             bucketManager.BucketSpawner.OnBucketsSpawn -= frogManager.FrogSpawner.SetActiveFrogsWithDelay;
             frogManager.FrogSpawner.OnFrogsSpawn -= SetHintTimer;
             foreach (var dragged in frogManager.SnappedFrogs) dragged.OnFrogDrag -= HandleDragging;
@@ -177,11 +182,15 @@ namespace Managers
             StartCoroutine(FinishAfterFireworks());
         }
 
+        public void SetEntryPoint(MatchColorFrogsEntryPoint entryPoint)
+        {
+            _entryPoint = entryPoint;
+        }
+
         private IEnumerator FinishAfterFireworks()
         {
             yield return new WaitForSecondsRealtime(5f);
-            Debug.Log("Finish.. time to Unload game");
-            matchColorFrogsEntryPoint.InvokeGameFinished();
+            _entryPoint.InvokeGameFinished();
         }
     }
 }

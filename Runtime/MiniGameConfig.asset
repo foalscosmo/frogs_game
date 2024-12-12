@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MiniGameConfig
   m_EditorClassIdentifier: 
   MiniGameName: match_color_frogs
-  Version: 0.1.3
+  Version: 0.1.4
   Url: https://pub-c6f807f0ad9c4c2a87535484e3098f30.r2.dev
   CustomRenderPipelineAsset: {fileID: 11400000, guid: 90ec9356f6192284da9eda04605b7b36, type: 2}
