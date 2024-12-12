@@ -11,7 +11,6 @@ public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint
     {
         var gameManager = Instantiate(gamePrefab);
         gameManager.GetComponent<GameManager>().SetEntryPoint(this);
-        InvokeGameFinished();
         return Task.CompletedTask;
     }
 
