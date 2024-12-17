@@ -1,8 +1,8 @@
 {
     "name": "com.appidea.minigames.match_color_frogs",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "displayName": "match_colors_frogs", 
-    "description": "game is about to match the colors of frogs",
+    "description": "game is about to match the colors",
     "dependencies": {
         "com.unity.inputsystem": "1.7.0",
         "com.unity.render-pipelines.universal": "14.0.10",

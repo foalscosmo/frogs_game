@@ -8,6 +8,7 @@ using Hint;
 using Particle;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -22,10 +23,7 @@ namespace Managers
         [SerializeField] private HintManager hintManager; // Reference to the HintManager.
         [SerializeField] private LevelManager levelManager; // Reference to the LevelManager.
         private MatchColorFrogsEntryPoint _entryPoint;
-        private void Awake()
-        {
-            Application.targetFrameRate = 120;
-        }
+        [SerializeField] private Button exitButton;
 
         private void OnEnable()
         {
@@ -50,6 +48,7 @@ namespace Managers
         }
 
         // Unsubscribe from events when the object is disabled
+
         private void OnDisable()
         {
             TouchSimulation.Disable();
@@ -70,6 +69,12 @@ namespace Managers
             levelManager.OnGameFinish -= particleManager.OnFinishPlayParticle;
             levelManager.OnGameFinish -= soundManager.PlayFinishMusicSource;
             levelManager.OnGameFinish -= SetFinishForPackage;
+        }
+
+        private void Awake()
+        {
+            Application.targetFrameRate = 120;
+            exitButton.onClick.AddListener(SetExitOnButton);
         }
 
         private void SetMissionFalse()
@@ -177,19 +182,22 @@ namespace Managers
             colorManager.SetColorToObjects();
         }
 
-        private void SetFinishForPackage()
-        {
-            StartCoroutine(FinishAfterFireworks());
-        }
-
         public void SetEntryPoint(MatchColorFrogsEntryPoint entryPoint)
         {
             _entryPoint = entryPoint;
         }
-
+        private void SetFinishForPackage()
+        {
+            StartCoroutine(FinishAfterFireworks());
+        }
         private IEnumerator FinishAfterFireworks()
         {
             yield return new WaitForSecondsRealtime(5f);
+            _entryPoint.InvokeGameFinished();
+        }
+
+        private void SetExitOnButton()
+        {
             _entryPoint.InvokeGameFinished();
         }
     }
