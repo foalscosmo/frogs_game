@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using com.appidea.MiniGamePlatform.CommunicationAPI;
 using Managers;
@@ -18,4 +17,6 @@ public class MatchColorFrogsEntryPoint : BaseMiniGameEntryPoint
     {
         return Task.CompletedTask;
     }
+    
+    
 }

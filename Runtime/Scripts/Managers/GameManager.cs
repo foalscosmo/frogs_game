@@ -40,9 +40,9 @@ namespace Managers
             foreach (var frog in frogManager.SnappedFrogs) frog.OnCorrectSnapWithSkin += soundManager.SetColorSound;
             levelManager.OnSnapIndexIncrease += FinishLevel;
             levelManager.OnLevelChange += GoToNextLevel;
-            levelManager.OnGameFinish += particleManager.HandleFinishParticle;
+           // levelManager.OnGameFinish += particleManager.HandleFinishParticle;
             levelManager.OnGameFinish += soundManager.PlayFinishGameSound;
-            levelManager.OnGameFinish += particleManager.OnFinishPlayParticle;
+           // levelManager.OnGameFinish += particleManager.OnFinishPlayParticle;
             levelManager.OnGameFinish += soundManager.PlayFinishMusicSource;
             levelManager.OnGameFinish += SetFinishForPackage;
         }
@@ -64,9 +64,9 @@ namespace Managers
             foreach (var frog in frogManager.SnappedFrogs) frog.OnCorrectSnapWithSkin -= soundManager.SetColorSound;
             levelManager.OnSnapIndexIncrease -= FinishLevel;
             levelManager.OnLevelChange -= GoToNextLevel;
-            levelManager.OnGameFinish -= particleManager.HandleFinishParticle;
+            //levelManager.OnGameFinish -= particleManager.HandleFinishParticle;
             levelManager.OnGameFinish -= soundManager.PlayFinishGameSound;
-            levelManager.OnGameFinish -= particleManager.OnFinishPlayParticle;
+            //levelManager.OnGameFinish -= particleManager.OnFinishPlayParticle;
             levelManager.OnGameFinish -= soundManager.PlayFinishMusicSource;
             levelManager.OnGameFinish -= SetFinishForPackage;
         }
@@ -97,7 +97,7 @@ namespace Managers
             }
         }
 
-        public void CancelDragging()
+        private void CancelDragging()
         {
             // Disable dragging for all frogs
             foreach (var frog in frogManager.SnappedFrogs)
