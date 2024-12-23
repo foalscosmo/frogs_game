@@ -1,17 +1,18 @@
 {
-    "name": "com.appidea.minigames.match_color_frogs",
-    "version": "0.1.7",
-    "displayName": "match_colors_frogs", 
-    "description": "game is about to match the colors",
-    "dependencies": {
-        "com.unity.inputsystem": "1.7.0",
-        "com.unity.render-pipelines.universal": "14.0.10",
-        "com.unity.visualeffectgraph": "14.0.10",
-        "com.unity.shadergraph" : "14.0.10 " },
-    "unity": "2022.3",
-    "author": {
-        "name": "zuka tavadze",
-        "email": "foalscosmo@gmail.com",
-        "url": ""
-    }
+  "name": "com.appidea.minigames.match_color_frogs",
+  "version": "0.1.7",
+  "displayName": "match_colors_frogs",
+  "description": "game is about to match the colors",
+  "dependencies": {
+    "com.unity.inputsystem": "1.7.0",
+    "com.unity.render-pipelines.universal": "14.0.10",
+    "com.unity.visualeffectgraph": "14.0.10",
+    "com.unity.shadergraph": "14.0.10 "
+  },
+  "unity": "2022.3",
+  "author": {
+    "name": "zuka tavadze",
+    "email": "foalscosmo@gmail.com",
+    "url": ""
+  }
 }
