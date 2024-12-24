@@ -174,19 +174,5 @@ namespace Frog
         //         Gizmos.DrawLine(new Vector2(transform.position.x, transform.position.y+2.5f), target.position); // Draw a line to the target
         //     }
         // }
-        
-        
-        //fingerUp check
-        // foreach (var target in from target in targetTransforms
-        //          let distanceToBucket = Vector2.Distance
-        //              (new Vector2(transform.position.x, transform.position.y+2.5f), target.position)
-        //          where distanceToBucket <= 3.5f
-        //          where gameObject.layer == target.gameObject.layer
-        //          select target)
-        // {
-        //     SnapToTarget(target);
-        //     break;
-        // }
-
     }
 }
