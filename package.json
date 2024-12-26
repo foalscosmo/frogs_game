@@ -1,6 +1,6 @@
 {
   "name": "com.appidea.minigames.match_color_frogs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "displayName": "match_colors_frogs",
   "description": "game is about to match the colors",
   "dependencies": {
